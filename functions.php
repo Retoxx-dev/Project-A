@@ -2,7 +2,7 @@
 session_start();
 
 // connect to database
-$db = mysqli_connect('127.0.0.1:49302', 'azure', '6#vWHD_$', 'users');
+$db = mysqli_connect('db', 'root', 'example', 'login');
 
 // variable declaration
 $username = "";

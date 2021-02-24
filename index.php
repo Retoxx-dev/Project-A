@@ -15,10 +15,6 @@ if (!isLoggedIn()) {
     
 </head>
 <body>
-
-    
-  
-
     <div class="jumbotron jumbotron_fix">
         <h1 class="display-3">Hello <?php echo $_SESSION['user']['username']; ?></h1>
         <div>
