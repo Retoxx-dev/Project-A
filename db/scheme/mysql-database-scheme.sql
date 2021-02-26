@@ -1,6 +1,3 @@
-CREATE DATABASE login;
-GRANT ALL PRIVILEGES ON login.* TO 'root'@'%';
-GRANT ALL PRIVILEGES ON login.* TO 'root'@'localhost';
 USE login;
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;

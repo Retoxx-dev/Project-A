@@ -2,7 +2,7 @@
 session_start();
 
 // connect to database
-$db = mysqli_connect('db', 'root', 'example', 'login');
+$db = mysqli_connect('db', 'loginuser', 'zaq1@WSX', 'login');
 
 // variable declaration
 $username = "";
