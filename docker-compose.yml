@@ -2,7 +2,14 @@ version: '3'
 services:
   php:
     container_name: php
-    build: .
+    image: php:7.4-apache
+    command:
+      - /bin/sh
+      - -c
+      - |
+        docker-php-ext-install mysqli
+        echo "MYSQLI EXTENSTION HAS BEEN INSTALLED"
+        apache2-foreground
     ports:
       - 80:80
     volumes:
@@ -10,7 +17,7 @@ services:
 
   db:
     container_name: db
-    image: mysql
+    image: mysql:8.0
     ports:
       - 3306:3306
     environment:
