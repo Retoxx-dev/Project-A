@@ -8,7 +8,7 @@ services:
       - -c
       - |
         docker-php-ext-install mysqli
-        echo "MYSQLI EXTENSTION HAS BEEN INSTALLED"
+        echo "\\\\\\\\\\\\\\\\\\\MYSQLI EXTENSTION HAS BEEN INSTALLED///////////////////////"
         apache2-foreground
     ports:
       - 80:80
