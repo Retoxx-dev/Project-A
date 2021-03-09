@@ -1,8 +1,12 @@
 <?php 
 session_start();
+$DB_HOST = $_ENV['DB_HOST'];
+$DB_NAME = $_ENV['DB_DATABASE'];
+$USER = $_ENV['DB_USERNAME'];
+$USER_PASSWORD = $_ENV['DB_PASSWORD'];
 
 // connect to database
-$db = mysqli_connect('db', 'loginuser', 'zaq1@WSX', 'login');
+$db = mysqli_connect($DB_HOST, $USER , $USER_PASSWORD, $DB_NAME);
 
 // variable declaration
 $username = "";

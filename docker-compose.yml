@@ -2,12 +2,19 @@ version: '3'
 services:
   php:
     container_name: php
-    image: php:${PHP_VERSION}
+    image: php:${PHP_TAG}
     volumes:
       - ./:/var/www/html/
     entrypoint: ["./docker-php-entrypoint.sh", "docker-php-entrypoint"]
     ports:
       - 80:80
+    links:
+      - db
+    environment: 
+      DB_HOST: "${DATABASE_HOST}"
+      DB_DATABASE: "${DATABASE_NAME}"
+      DB_USERNAME: "${USER}"
+      DB_PASSWORD: "${USER_PASSWORD}"
 
   db:
     container_name: db
