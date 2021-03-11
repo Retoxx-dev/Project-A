@@ -12,7 +12,7 @@ The first docker container contains application files (both front and backend) t
 The second and third docker container serves MYSQL database on port 3306 and contains adminer image (both - open port and adminer are for test purposes). Data persistancy has been achieved here using `sql-data` volume. To make sure that correct database is loaded every single time I've used sql entrypoint that executes SQL query (located in db/scheme).
 
 ## USAGE
-    * Make sure Docker and Docker-Compose are installed (In case you don't have it: [Docker for Windows/Mac/Linux](https://get.docker.com/))
+    * Make sure Docker and Docker-Compose are installed - In case you don't have it: [Docker for Windows/Mac/Linux](https://get.docker.com/)
     * Clone this repo `https://github.com/Retoxx-dev/Project-A.git`
     * Open any command line and navigate to the repo's folder
     * Simply type in `docker-compose up` to start the application
