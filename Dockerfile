@@ -12,6 +12,6 @@ COPY --chown=www-data:www-data . .
 EXPOSE 80
 
 HEALTHCHECK --interval=5s --timeout=3s \
-   CMD curl -f https://localhost:80 || exit 1
+   CMD curl -f http://localhost:80 || exit 1
 
 CMD ["apache2-foreground"]
