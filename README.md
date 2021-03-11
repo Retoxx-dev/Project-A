@@ -1,20 +1,21 @@
-# Introduction 
-TODO: Give a short introduction of your project. Let this section explain the objectives or the motivation behind this project. 
+[![php](https://img.shields.io/badge/PHP-7.4-yellow)]     [![mysql](https://img.shields.io/badge/MYSQL-8.0-yellow)]  
 
-# Getting Started
-TODO: Guide users through getting your code up and running on their own system. In this section you can talk about:
-1.	Installation process
-2.	Software dependencies
-3.	Latest releases
-4.	API references
+##  Description
+First things first - I don't want to show up my PHP skills in this project since I'm not an PHP dev (that's why majority of this code has been taken from some youtube tutorials :o) and I haven't spend so much time improving it - you can use SQL Injection and there's only frontend validation. In this repo I want to show my early DevOps engineer skills.
 
-# Build and Test
-TODO: Describe and show how to build your code and run the tests. 
+## Overview
+> NOTE: This is just a simple vanilla PHP/MYSQL form application.
 
-# Contribute
-TODO: Explain how other users and developers can contribute to make your code better. 
 
-If you want to learn more about creating good readme files then refer the following [guidelines](https://docs.microsoft.com/en-us/azure/devops/repos/git/create-a-readme?view=azure-devops). You can also seek inspiration from the below readme files:
-- [ASP.NET Core](https://github.com/aspnet/Home)
-- [Visual Studio Code](https://github.com/Microsoft/vscode)
-- [Chakra Core](https://github.com/Microsoft/ChakraCore)
+The first docker container contains application files (both front and backend) that are bind-mounted with host's 'Project-A' folder so you can edit it locally while container is running. In this case I needed mysqli php extenstion to connect with DB so I've used entrypoint to install it. The PHP container is listening on port 80.
+
+The second and third docker container serves MYSQL database on port 3306 and contains adminer image (both - open port and adminer are for test purposes). Data persistancy has been achieved here using `sql-data` volume. To make sure that correct database is loaded every single time I've used sql entrypoint that executes SQL query (located in db/scheme).
+
+## USAGE
+    - Make sure Docker and Docker-Compose are installed (In case you don't have it: [Docker for Windows/Mac/Linux](https://get.docker.com/))
+    - Clone this repo `https://github.com/Retoxx-dev/Project-A.git`
+    - Open any command line and navigate to the repo's folder
+    - Simply type in `docker-compose up` to start the application
+    - Fire up internet browser and proceed to `http://localhost` (security certificate hasn't been added YET)
+    
+!Remember to use `docker-compose down` to clean up after you finish!
