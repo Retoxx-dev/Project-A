@@ -21,6 +21,7 @@ The second and third docker container serves MYSQL database on port 3306 and con
 <br/>
 
 ## USAGE
+<<<<<<< HEAD
 ~ Make sure that Docker and Docker-Compose are installed - In case you don't have it: [Docker for Windows/Mac/Linux](https://get.docker.com/)
 ~ Clone this repo `git clone https://github.com/Retoxx-dev/Project-A.git`
 ~ Open any command line and navigate to the repo's folder
@@ -72,3 +73,12 @@ MYSQL: `docker build --tag mysqlform:1.0 -f Dockerfilesql .`
 
 ### Deployment
 To deploy our stack application, head over to the project's repo and type: `docker stack deploy -c docker-stack.yml app`
+=======
+    * Make sure Docker and Docker-Compose are installed - In case you don't have it: https://get.docker.com/)
+    * Clone this repo `https://github.com/Retoxx-dev/Project-A.git`
+    * Open any command line and navigate to the repo's folder
+    * Simply type in `docker-compose up` to start the application
+    * Fire up internet browser and proceed to `http://localhost` (security certificate hasn't been added YET)
+    
+Remember to use `docker-compose down` to clean up after you finish
+>>>>>>> 04d0ebd489c024e0e4fa191dda0af1383dec501f
