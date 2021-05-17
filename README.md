@@ -29,7 +29,7 @@ The second and third docker container serves MYSQL database on port 3306 and con
 Remember to use `docker-compose down` to clean up after you finish
 
 ## STACK OVERVIEW
-<br/><br/>
+
 Compose file has been prepared as part of the production evironment. This yaml file is using docker swarm as a orchestration tool. <br/><br/>
 `Docker-stack.yml` uses images (in my case phpform:1.0 and mysqlform:1.0) and creates 1 php instance and 1 mysql instance. Obviously `build` doesn't work with stack hence you have to build previosly mentioned images on your own (Both Dockerfiles are in the project's repo)
 <br/><br/>
@@ -54,7 +54,7 @@ Database name secret - `docker secret create db_name secrets/db_name.txt` <br/>
 Database user - `docker secret create user secrets/db_user.txt` <br/>
 Database user password - `docker secret create user_password secrets/user_password.txt` <br/>
 Root password - `docker secret create mysql_root_password secrets/mysqlroot.txt` <br/>
-<br/><br/>
+<br/>
 
 ### PHP database credentials
 
@@ -68,7 +68,7 @@ Create 2 docker images - php and mysql one. Head over to the project's repo and 
 PHP: `docker build --tag phpform:1.0 -f Dockerfilephp .` <br />
 MYSQL: `docker build --tag mysqlform:1.0 -f Dockerfilesql .`
 
-<br/><br/>
+<br/>
 
 ### Deployment
 To deploy our stack application, head over to the project's repo and type: <br/> `docker stack deploy -c docker-stack.yml app`
