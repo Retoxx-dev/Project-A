@@ -1,0 +1,37 @@
+version: '3.8'
+services:
+  php:
+    image: phpform:1.0
+    ports:
+      - 80:80
+    deploy:
+      replicas: 1
+  db:
+    image: mysqlform:1.0
+    secrets:
+      - mysql_root_password
+      - db_name
+      - user
+      - user_password
+    environment:
+      - MYSQL_DATABASE_FILE=/run/secrets/db_name
+      - MYSQL_USER_FILE=/run/secrets/user
+      - MYSQL_PASSWORD_FILE=/run/secrets/user_password
+      - MYSQL_ROOT_PASSWORD_FILE=/run/secrets/mysql_root_password
+    volumes:
+      - sql-data:/var/lib/mysql
+    deploy:
+      replicas: 1
+
+volumes:
+  sql-data:
+
+secrets:
+  mysql_root_password:
+    external: true
+  db_name:
+    external: true
+  user_password:
+    external: true
+  user:
+    external: true
