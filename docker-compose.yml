@@ -2,7 +2,7 @@ version: '3'
 services:
   php:
     container_name: php
-    image: php:${PHP_TAG}
+    image: php:7.4-apache
     volumes:
       - ./:/var/www/html/
     entrypoint: ["./docker-php-entrypoint.sh", "docker-php-entrypoint"]
@@ -18,9 +18,7 @@ services:
 
   db:
     container_name: db
-    image: mysql:${DB_TAG}
-    ports:
-      - 3306:3306
+    image: mysql:8.0
     environment:
       MYSQL_USER: "${USER}"
       MYSQL_PASSWORD: "${USER_PASSWORD}"
