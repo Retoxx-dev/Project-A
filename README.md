@@ -36,7 +36,7 @@ Compose file has been prepared as part of the production evironment. This yaml f
 Since php-apache related image doesn't support secrets - `cred.php` has been created (Ye - I know, keeping credentials in plain text is asking for troubles thing but copying credentials file to non-root directory inside of the container meets minimum security standards tho). In this case I've created `cred-example.php` file as a example of how `cred.php` file should look like.
 <br/><br/>
 In mysql image external secrets has been implemented. Unfortunatelly for some reason `echo` command adds an additional 'next line' while creating secrets therefore I've used txt files to create them. `Mysql-database-scheme.sql` has been permanently injected into the image as a entrypoint. 
-
+<br/><br/>
 
 ## STACK USAGE
 
@@ -71,4 +71,5 @@ MYSQL: `docker build --tag mysqlform:1.0 -f Dockerfilesql .`
 <br/>
 
 ### Deployment
-To deploy our stack application, head over to the project's repo and type: <br/> `docker stack deploy -c docker-stack.yml app`
+To deploy our stack application, head over to the project's repo and type: <br/> `docker stack deploy -c docker-stack.yml app` <br/>
+Also remember to remove it after you done `docker stack rm app`
