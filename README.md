@@ -1,8 +1,10 @@
-![alt text](https://github.com/Retoxx-dev/Project-A/blob/f95364bc259f3090dd046c23e76bd5893b5315c3/form.png)
+![project screenshot](https://github.com/Retoxx-dev/Project-A/blob/f95364bc259f3090dd046c23e76bd5893b5315c3/form.png)
 
 ![php version](https://img.shields.io/badge/PHP-7.4-yellow)     ![mysql version](https://img.shields.io/badge/MYSQL-8.0-yellow)
 
-##  Description
+# REFACTOR IN PROGRESS
+
+## Description
 First things first - I don't want to show up my PHP skills in this project since I'm not an PHP dev (that's why majority of this code has been taken from some youtube tutorials :o) and I haven't spend so much time improving it - you can use SQL Injection and there's only frontend validation. In this repo I want to show my early DevOps engineer skills.
 
 ## Overview
@@ -45,30 +47,8 @@ In mysql image external secrets has been implemented. Unfortunatelly for some re
 Make sure if your swarm mode is initialized - If don't, use: `docker swarm init`.
 <br/><br/>
 
-### Swarm secrets
-
-In order to make secrets head over to the project's repo. From there we have 2 options: create secrets using txt files or create them using echo, openssl etc.
-
-To create them ( as I did ) using text files - type: <br/>
-Database name secret - `docker secret create db_name secrets/db_name.txt` <br/>
-Database user - `docker secret create user secrets/db_user.txt` <br/>
-Database user password - `docker secret create user_password secrets/user_password.txt` <br/>
-Root password - `docker secret create mysql_root_password secrets/mysqlroot.txt` <br/>
-<br/>
-
-### PHP database credentials
-
 Rename `cred-example.php` to `cred.php` and fill this up with database credentials. If you used echo or txt file secret just type it in.
 <br/><br/>
-
-### Docker images
-Create 2 docker images - php and mysql one. Head over to the project's repo and build them:
-<br/>
-
-PHP: `docker build --tag phpform:1.0 -f Dockerfilephp .` <br />
-MYSQL: `docker build --tag mysqlform:1.0 -f Dockerfilesql .`
-
-<br/>
 
 ### Deployment
 To deploy our stack application, head over to the project's repo and type: <br/> `docker stack deploy -c docker-stack.yml app` <br/>
